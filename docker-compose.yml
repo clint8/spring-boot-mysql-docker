@@ -16,7 +16,7 @@ services:
       - db_data:/var/lib/mysql
 
   app:
-    image: maven:3.9.6-eclipse-temurin-17
+    image: maven:3.9.6-eclipse-temurin-21
     container_name: simple-app
     ports:
       - "8080:8080"

@@ -5,11 +5,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@NoArgsConstructor
 public class Item {
 
     @Id
@@ -18,6 +16,9 @@ public class Item {
 
     private String name;
     private String description;
+
+    public Item() {
+    }
 
     public Item(String name, String description) {
         this.name = name;
