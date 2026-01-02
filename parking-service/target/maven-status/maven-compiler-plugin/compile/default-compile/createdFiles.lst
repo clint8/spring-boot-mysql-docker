@@ -1,0 +1,11 @@
+com/example/parking/repository/ParkingSpotRepository.class
+com/example/parking/domain/TimeSlot.class
+com/example/parking/repository/ReservationRepository.class
+com/example/parking/domain/Reservation.class
+com/example/parking/ParkingApplication.class
+com/example/parking/service/ParkingService.class
+com/example/parking/repository/TimeSlotRepository.class
+com/example/parking/config/DataInitializer.class
+com/example/parking/dto/ReservationRequest.class
+com/example/parking/domain/ParkingSpot.class
+com/example/parking/controller/ParkingController.class
