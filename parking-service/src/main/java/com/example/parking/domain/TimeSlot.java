@@ -1,8 +1,14 @@
 package com.example.parking.domain;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class TimeSlot {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -10,28 +16,4 @@ public class TimeSlot {
 
     private int startTime; // 0-23
     private String label; // "08:00 - 09:00"
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public int getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(int startTime) {
-        this.startTime = startTime;
-    }
-
-    public String getLabel() {
-        return label;
-    }
-
-    public void setLabel(String label) {
-        this.label = label;
-    }
 }

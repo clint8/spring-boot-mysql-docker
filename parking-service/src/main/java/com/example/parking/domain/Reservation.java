@@ -2,8 +2,14 @@ package com.example.parking.domain;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,44 +25,4 @@ public class Reservation {
     @ManyToOne(optional = false)
     @JoinColumn(name = "time_slot_id")
     private TimeSlot timeSlot;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
-
-    public LocalDate getParkingDate() {
-        return parkingDate;
-    }
-
-    public void setParkingDate(LocalDate parkingDate) {
-        this.parkingDate = parkingDate;
-    }
-
-    public ParkingSpot getParkingSpot() {
-        return parkingSpot;
-    }
-
-    public void setParkingSpot(ParkingSpot parkingSpot) {
-        this.parkingSpot = parkingSpot;
-    }
-
-    public TimeSlot getTimeSlot() {
-        return timeSlot;
-    }
-
-    public void setTimeSlot(TimeSlot timeSlot) {
-        this.timeSlot = timeSlot;
-    }
 }

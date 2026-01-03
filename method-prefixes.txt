@@ -1,0 +1,86 @@
+1. Method prefixes (what kind of query)
+findBy…
+getBy…
+readBy…
+queryBy…
+
+
+Also very common:
+
+existsBy…
+countBy…
+deleteBy…
+removeBy…
+
+2. Boolean fields
+findByActiveTrue()
+findByActiveFalse()
+
+
+Equivalent:
+
+findByActive(boolean active)
+
+3. Comparison operators
+findByPriceGreaterThan(value)
+findByPriceGreaterThanEqual(value)
+
+findByPriceLessThan(value)
+findByPriceLessThanEqual(value)
+
+findByPriceBetween(min, max)
+
+4. String matching
+findByName(String name)                  // =
+findByNameContaining(text)              // LIKE %text%
+findByNameStartingWith(prefix)          // LIKE prefix%
+findByNameEndingWith(suffix)            // LIKE %suffix
+
+
+Case handling:
+
+findByNameIgnoreCase(name)
+findByNameContainingIgnoreCase(text)
+
+5. Null checks
+findByDescriptionIsNull()
+findByDescriptionIsNotNull()
+
+6. Collections / IN clauses
+findByIdIn(List<Long> ids)
+findByStatusIn(Set<Status> statuses)
+
+7. Logical operators
+findByActiveTrueAndPriceGreaterThan(value)
+findByActiveTrueOrFeaturedTrue()
+
+
+⚠️ No parentheses support — keep logic simple
+
+8. Sorting
+findByActiveTrueOrderByPriceAsc()
+findByActiveTrueOrderByCreatedAtDesc()
+
+
+Or preferred with pagination:
+
+findByActiveTrue(Pageable pageable)
+
+9. Pagination & limits
+Page<Item> findByActiveTrue(Pageable pageable)
+
+findFirstByOrderByCreatedAtDesc()
+findTop5ByActiveTrueOrderByPriceDesc()
+
+10. Date / time fields
+findByCreatedAtBefore(time)
+findByCreatedAtAfter(time)
+
+11. Nested properties
+findByUserEmail(email)
+
+
+(Item → User → email)
+
+12. Distinct results
+findDistinctByName(name)

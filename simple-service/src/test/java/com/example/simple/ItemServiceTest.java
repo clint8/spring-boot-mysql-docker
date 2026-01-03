@@ -24,7 +24,7 @@ class ItemServiceTest {
 
     @BeforeEach
     void setUp() {
-        sampleItem = new Item("Test Item", "Test Description");
+        sampleItem = new Item(null, "Test Item", "Test Description");
         sampleItem.setId(1L);
     }
 
@@ -44,7 +44,7 @@ class ItemServiceTest {
     void testSaveItem() {
         Mockito.when(itemRepository.save(Mockito.any(Item.class))).thenReturn(sampleItem);
 
-        Item savedItem = itemService.saveItem(new Item("Test Item", "Test Description"));
+        Item savedItem = itemService.saveItem(new Item(null, "Test Item", "Test Description"));
 
         Assertions.assertNotNull(savedItem);
         Assertions.assertEquals("Test Item", savedItem.getName());
