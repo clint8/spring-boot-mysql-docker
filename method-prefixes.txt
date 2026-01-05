@@ -84,3 +84,41 @@ findByUserEmail(email)
 
 12. Distinct results
 findDistinctByName(name)
+
+Included by Default:
+
+<S extends T> S save(S entity)
+<S extends T> Iterable<S> saveAll(Iterable<S> entities)
+
+Optional<T> findById(ID id)
+boolean existsById(ID id)
+
+Iterable<T> findAll()
+Iterable<T> findAllById(Iterable<ID> ids)
+
+long count()
+
+void deleteById(ID id)
+void delete(T entity)
+void deleteAllById(Iterable<? extends ID> ids)
+void deleteAll(Iterable<? extends T> entities)
+void deleteAll()
+Paging & sorting (from PagingAndSortingRepository)
+
+Iterable<T> findAll(Sort sort)
+Page<T> findAll(Pageable pageable)
+JPA-specific methods (from JpaRepository)
+
+<S extends T> S saveAndFlush(S entity)
+
+void deleteAllInBatch()
+void deleteAllByIdInBatch(Iterable<ID> ids)
+void deleteInBatch(Iterable<T> entities)
+
+T getOne(ID id)              // lazy proxy (deprecated)
+T getById(ID id)             // lazy proxy
+T getReferenceById(ID id)    // preferred replacement
+
+List<T> findAll()
+List<T> findAll(Sort sort)
+List<T> findAllById(Iterable<ID> ids)
